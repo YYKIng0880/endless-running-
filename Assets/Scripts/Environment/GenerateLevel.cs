@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GenerateLevel : MonoBehaviour
-{
+{//Éú³ÉµØÍ¼£»
     public GameObject[] section;
     public int zPos = 50;
     public bool creatingSection = false;

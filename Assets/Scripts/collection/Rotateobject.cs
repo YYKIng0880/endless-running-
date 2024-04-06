@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Rotateobject: MonoBehaviour
-{
+{//Ðý×ªÓ²±Ò
     public float rotateSpeed = 1f;
     // Update is called once per frame
     void Update()

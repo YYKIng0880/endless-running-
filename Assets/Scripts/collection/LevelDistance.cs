@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class LevelDistance : MonoBehaviour
 {
+    //ÒÆ¶¯»ý·Ö£»
     public GameObject disDisplay;
     public int disRun;
     public bool addingDis = false;
