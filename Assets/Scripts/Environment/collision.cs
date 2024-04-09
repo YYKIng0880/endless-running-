@@ -9,30 +9,17 @@ public class collision : MonoBehaviour
     public GameObject charPlayer;
     public AudioSource collisionMusic;
     public GameObject cam;
-    public GameObject Coinscount;
-    public GameObject Distancecount;
-    public GameObject endScreen;
-    public GameObject fadeOut;
+    public GameObject levelControl;
+    
     private void OnTriggerEnter(Collider other)
     {
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         thePlayer .GetComponent<PlayerMove>().enabled = false;
-        charPlayer.GetComponent<Animator>().Play("Stumble Backwards");
         collisionMusic.Play();
+        levelControl.GetComponent<LevelDistance>().enabled = false;
+        charPlayer.GetComponent<Animator>().Play("Stumble Backwards");
         cam.GetComponent<Animator>().enabled = true;
-        StartCoroutine(EndGame()); 
+       
     }
-    IEnumerator EndGame()
-    {
-        yield return new WaitForSeconds(3);
-        Coinscount.SetActive(false);
-        Distancecount.SetActive(false);
-        endScreen.SetActive(true);
-        yield return new WaitForSeconds(3);
-        fadeOut.SetActive(true);
-        endScreen.SetActive(false);
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(1);
-
-    }
+    
 }

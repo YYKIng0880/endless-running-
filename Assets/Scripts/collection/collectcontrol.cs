@@ -7,8 +7,10 @@ public class collectcontrol : MonoBehaviour
 {//UIÓ²±Ò¼ÆÊý£»
       public static int  coinCount;
       public GameObject coinCountDisplay;
+     public GameObject coinEndDisplay;
     private void Update()
     {
         coinCountDisplay.GetComponent<Text>().text = "" + coinCount;
+       coinEndDisplay.GetComponent<Text>().text = "" + coinCount;
     }
 }

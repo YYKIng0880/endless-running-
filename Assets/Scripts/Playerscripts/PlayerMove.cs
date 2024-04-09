@@ -12,7 +12,7 @@ public class PlayerMove: MonoBehaviour
     public bool isJumping=false;
     public bool comingdown=false;
     public GameObject playerObject;
-    public float upSpeed = 3f;
+    public float upSpeed = 8f;
     private void Update()
     {
         transform.Translate(Vector3.forward * moveSpeed,Space.World);
