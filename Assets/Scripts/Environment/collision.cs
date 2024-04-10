@@ -19,6 +19,7 @@ public class collision : MonoBehaviour
         levelControl.GetComponent<LevelDistance>().enabled = false;
         charPlayer.GetComponent<Animator>().Play("Stumble Backwards");
         cam.GetComponent<Animator>().enabled = true;
+        levelControl.GetComponent<EndingUI>().enabled = true;
        
     }
     

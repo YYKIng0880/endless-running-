@@ -9,20 +9,20 @@ public class EndingUI : MonoBehaviour
     public GameObject liveDis;
     public GameObject endScreen;
     public GameObject fadeOut;
-    public void OnTriggerEnter(Collider other)
+    private void Start()
     {
         StartCoroutine(EndGame());
     }
     IEnumerator EndGame()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1.5f);
         liveCoins.SetActive(false);
         liveDis.SetActive(false);
         endScreen.SetActive(true);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         fadeOut.SetActive(true);
-        /*endScreen.SetActive(false);
+        /*endScreen.SetActive(false);*/
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(1);*/
+        SceneManager.LoadScene(1);
     }
 }
