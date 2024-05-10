@@ -16,7 +16,8 @@ public class LevelStart : MonoBehaviour
     }
     IEnumerator CountSequence()
     {
-        yield return new WaitForSeconds(1.5f);
+        fadeIn.SetActive(true);
+        yield return new WaitForSeconds(1f);
         countDown3.SetActive(true);
         BeginBGM.Play();
         yield return new WaitForSeconds(1f);

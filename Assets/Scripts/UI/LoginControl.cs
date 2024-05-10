@@ -13,7 +13,7 @@ public class LoginControl : MonoBehaviour
     {
         string ID=IDInput.text;
         string passward=passwardInput.text;
-        if(ID=="byy"&&passward=="123456")
+        if(ID=="Byy"&&passward=="123456")
         {
             SceneManager.LoadScene(1);
         }
