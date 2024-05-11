@@ -7,35 +7,34 @@ using UnityEngine.UIElements;
 public class PlayerMove: MonoBehaviour
 {
    //人物的移动；
-    public float moveSpeed = 3;
+    private float moveSpeed = 7f;//正常人物速度；
+    private float supermovespeed = 9.5f;//按下shift加速
     public float leftRightSpeed = 4;
     public static bool canMove = false;
-    public bool isJumping=false;
-    public bool comingdown=false;
+    private bool isJumping=false;
+    private bool comingdown=false;
     public GameObject playerObject;
     public float upSpeed = 8f;
     private bool canmovechoice=false;//防止选择人物界面时人物移动，要按下W人物才一直向前run；
-    private bool canmove=false;//按下esc后是否能继续向前；
+   // private bool canmove=false;//按下esc后是否能继续向前；
 
     //协程里跳跃的上升时间和下降时间；
-    public float UpTime = 0.45f;
-    public float DownTime = 0.45f;
+    private float UpTime = 0.45f;
+    private float DownTime = 0.45f;
    
     private void Update()
     {
         //按下ECS键后暂停人物向前移动
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            canmove = false;
+           // canmove = false;
+            canmovechoice = false;
         }
         if(Input.GetKeyDown(KeyCode.Backspace))
         {
-            canmove = true;
+            canmovechoice = true;
         }
-        if(canmove)
-        {
-            transform.Translate(Vector3.forward * moveSpeed, Space.World);
-        }
+       
         //一开始要按W键才开始向前跑，防止在人物选择界面就移动
         if(Input.GetKey(KeyCode.W))
         {
@@ -43,7 +42,15 @@ public class PlayerMove: MonoBehaviour
         }
         if(canmovechoice)
         {
-            transform.Translate(Vector3.forward * moveSpeed, Space.World);
+            if((Input.GetKey(KeyCode.LeftShift))||(Input.GetKey(KeyCode.RightShift)))
+            {
+               // print("asd");
+                transform.Translate(Vector3.forward * Time.deltaTime * supermovespeed, Space.World);
+            }
+            else
+            {
+                transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
+            }
         }
         //在开始倒计时的时候，不能左右移动；
         if(canMove)

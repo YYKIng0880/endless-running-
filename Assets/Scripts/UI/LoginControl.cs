@@ -19,14 +19,14 @@ public class LoginControl : MonoBehaviour
         }
         else
         {
-            WarningMessage.enabled = true;
+            WarningMessage.enabled=true;
             StartCoroutine(HideMessage());
         }
         
     }
    IEnumerator HideMessage()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         WarningMessage.enabled = false;
     }
 }

@@ -2429,14 +2429,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60fa2cef86f48234f84fdf739862c84d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.008
+  moveSpeed: 8
   leftRightSpeed: 4
   isJumping: 0
   comingdown: 0
   playerObject: {fileID: 3595506295500373797}
   upSpeed: 3
-  UpTime: 0.45
-  DownTime: 0.4
 --- !u!143 &2347829938901908188
 CharacterController:
   m_ObjectHideFlags: 0

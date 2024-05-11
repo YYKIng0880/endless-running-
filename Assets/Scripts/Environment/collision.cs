@@ -21,12 +21,11 @@ public class collision : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        this.gameObject.GetComponent<BoxCollider>().enabled = false;
-        thePlayer .GetComponent<PlayerMove>().enabled = false;
+        thePlayer.GetComponent<PlayerMove>().enabled = false;
+        gameObject.GetComponent<BoxCollider>().enabled = false;
         collisionMusic.Play();
         levelControl.GetComponent<LevelDistance>().enabled = false;
-      
-        
+
         character.GetComponent<Animator>().Play("Stumble Backwards");
         
         
